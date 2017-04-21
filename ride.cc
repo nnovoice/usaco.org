@@ -1,8 +1,8 @@
 /*
- * ID: raghav
- * PROG: ride 
- * LANG: C++                  (<-- or C++11 if you prefer)
- * */
+  ID: raghav
+  PROG: ride 
+  LANG: C++                  
+*/
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -17,21 +17,17 @@ int main() {
 
     fin >> comet >> group;
     int c_prod = 1, g_prod = 1;
-    cout << comet << "\t" << group << endl;
-    for (int i = 0; i < 6; ++i) {
-        cout << comet[i] << group[i] << endl;
+    
+    for (int i = 0; comet[i] != '\0'; ++i) {
         c_prod *= (comet[i] - 'A' + 1);
+    }
+    
+    for (int i = 0; group[i] != '\0'; ++i) {
         g_prod *= (group[i] - 'A' + 1);
     }
 
-    cout << c_prod << " " << g_prod << endl;
-
-    cout << c_prod << " " << g_prod << endl;
-    cout << c_prod << " " << g_prod << endl;
     c_prod = c_prod % 47;
     g_prod = g_prod % 47;
-
-    cout << c_prod << " " << g_prod << endl;
     
     if (c_prod == g_prod)
         fout << "GO\n";
